@@ -1,0 +1,66 @@
+{
+  "name": "razzle-ant-design-custom-theme",
+  "description": "Simple server-side using React, Ant Design and Razzle",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "author": "Emerson Laurentino <emersonlaurentino@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emersonlaurentino/razzle-ant-design-custom-theme"
+  },
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "test": "razzle test --env=jsdom",
+    "lint": "esw -c .eslintrc src --ext .js,.jsx --ignore-path .eslintignore --color",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:watch": "npm run lint -- --watch",
+    "build": "razzle build",
+    "dev": "razzle start",
+    "server": "NODE_ENV=production node build/server.js",
+    "start": "npm-run-all --parallel dev lint:watch",
+    "start:prod": "npm-run-all build server",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "antd": "^2.13.1",
+    "express": "^4.15.4",
+    "razzle": "^0.8.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-import": "^1.4.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-import-resolver-babel-module": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-watch": "^3.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "isomorphic-style-loader": "^4.0.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "lodash": "^4.17.4",
+    "npm-run-all": "^4.1.1",
+    "postcss-loader": "^2.0.6",
+    "prop-types": "^15.5.10",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
+    "style-loader": "^0.18.2"
+  }
+}
